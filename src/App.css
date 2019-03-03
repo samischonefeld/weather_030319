@@ -1,33 +1,54 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Header*/
+.header{
+  border: 2px solid black;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #EBFA2B;
+}
+h1 {
+    color: #0AE3B2;
+    letter-spacing: 5px;
+    background-color: #EBFA2B;
 }
 
-.App-link {
-  color: #61dafb;
+* {
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+  background-color: #F2F99A;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*Navigation*/
+li {
+  list-style-type: none;
+  color: #11C864;
+  font-size: 20px;
+  text-decoration: bold;
+  letter-spacing: 5px;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/*Search*/
+form{
+  border: 2px solid black;
+  padding: 20px;
+}
+.formcontainer{
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.formtitle{
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: #0AE3B2;
 }
