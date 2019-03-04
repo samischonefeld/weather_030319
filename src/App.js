@@ -1,32 +1,45 @@
 import React, { Component } from 'react';
+import Header from './Header.jsx';
 import './App.css';
 
 
 class App extends Component {
   state = {
-    title: '',
+    zip: '',
+    temp: '',
+    location: '',
+    description: '',
   }
 
   handleChange(e) {
-    console.log(e.target.value)
-    this.setState({
-      title: e.target.value
+    let value = e.target.value
+    this.setState({zip: value})
+  }
+
+  fetchAPI(){
+    let zip = this.state.zip;
+    let url = `//api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=fecb88d974a5942d6be1e7a92c741227`
+    fetch (url)
+    .then (res => res.json())
+    .then(data => {
+      console.log(data.name)
+      this.setState(preState => ({
+        temp: data.main.temp,
+        location: data.name,
+        description: data.weather[0].description
+      }))
     })
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    let encodedTitle = encodeURI(this.state.title)
-    fetch(`https://www.goodreads.com/search.xml?key=zpjgXvUE4HXjFSvSwDTStg&q=${encodedTitle}`)
-    .then((res) => {
-      console.log(res.json())
-      return res.json()
-    })
+    e.preventDefault()
+    this.fetchAPI()
   }
 
   render() {
     return (
       <div>
+      <Header />
       <input
         onChange = {(e) => this.handleChange(e)}
         type = 'text' value = {this.state.zipcode}
