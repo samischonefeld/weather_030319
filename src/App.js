@@ -8,30 +8,30 @@ class App extends Component {
   state = {
     zip: '',
     weather: '',
-    temp: '',
-    location: '',
-    description: '',
+    temp: 'warm or cold',
+    location: 'here or there',
+    description: 'sun or rain',
   }
 
   handleChange(e) {
     let value = e.target.value
-    this.setState({zip: value})
+    this.setState({ zip: value })
   }
 
-  fetchAPI(){
+  fetchAPI() {
     let zip = this.state.zip;
     let url = `//api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=fecb88d974a5942d6be1e7a92c741227`
-    fetch (url)
-    .then (res => res.json())
-    .then(data => {
-      console.log(data)
-      this.setState(preState => ({
-        weather: data,
-        temp: data.main.temp,
-        location: data.name,
-        description: data.weather[0].main,
-      }))
-    })
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        this.setState(preState => ({
+          weather: data,
+          temp: data.main.temp,
+          location: data.name,
+          description: data.weather[0].main,
+        }))
+      })
   }
 
   handleSubmit(e) {
@@ -42,18 +42,22 @@ class App extends Component {
   render() {
     console.log('this is state', this.state)
     return (
-      <div>
+      <div className = 'page_container'>
       <Header />
+      <div className = "searchbar">
       <input
+        className = "zipinput"
         onChange = {(e) => this.handleChange(e)}
         type = 'text' value = {this.state.zipcode}
         placeholder = 'zipcode'>
       </input>
       <button
+        className = "submitbutton"
         onClick = {(e) => this.handleSubmit(e)}
         type = 'submit'>
         ENTER
       </button>
+      </div>
       <Results
         temp = {this.state.temp}
         location = {this.state.location}

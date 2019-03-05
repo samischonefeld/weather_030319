@@ -9,12 +9,17 @@
   justify-content: center;
   background-color: #EBFA2B;
 }
+.title {
+  background-color: #EBFA2B;
+}
 h1 {
     color: #0AE3B2;
     letter-spacing: 5px;
-    background-color: #EBFA2B;
 }
-
+h2 {
+  font-size: 35px;
+  color: gray;
+}
 * {
   font-family: 'ZCOOL QingKe HuangYou', cursive;
   background-color: #F2F99A;
@@ -35,20 +40,29 @@ ul {
 }
 
 /*Search*/
-form{
-  border: 2px solid black;
+.searchbar {
+  display: flex;
+  justify-content: center;
   padding: 20px;
 }
-.formcontainer{
-  border: 2px solid blue;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+.zipinput {
+  font-size: 24px;
 }
-.formtitle{
-  border: 2px solid red;
+
+.submitbutton {
+  font-size: 24px;
+  background-color: #0AE3B2;
+}
+
+/*Global*/
+.page_container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 10px;
-  color: #0AE3B2;
+}
+/*Results*/
+.results_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
