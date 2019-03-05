@@ -7,16 +7,16 @@ class Results extends Component{
     return(
       <div className = 'results_container'>
       <div className = "result_container">
-        <h2>Location</h2>
-        <h1> {this.props.location} </h1>
+        <h2 className = "category">Location</h2>
+        <h1 className = "category"> {this.props.location} </h1>
       </div>
       <div className = "result_container">
-        <h2> Temperature </h2>
-        <h1> {this.props.temp + '°'} </h1>
+        <h2 className = "category"> Temperature </h2>
+        <h1 className = "category"> {this.props.temp + '°'} </h1>
       </div>
       <div className = "result_container">
-        <h2> Description </h2>
-        <h1> {this.props.description} </h1>
+        <h2 className = "category"> Description </h2>
+        <h1 className = "category"> {this.props.description} </h1>
       </div>
       </div>
       )
