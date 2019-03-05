@@ -2,27 +2,25 @@
 
 /*Header*/
 .header{
-  border: 2px solid black;
+  border: 2px solid lightgray;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #EBFA2B;
+  background-color: #F2F99A;
 }
-.title {
-  background-color: #EBFA2B;
-}
+
 h1 {
     color: #0AE3B2;
     letter-spacing: 5px;
 }
 h2 {
   font-size: 35px;
-  color: gray;
+  color: slategray;
 }
 * {
   font-family: 'ZCOOL QingKe HuangYou', cursive;
-  background-color: #F2F99A;
+  background-color: #EBFA2B;
 }
 
 /*Navigation*/
@@ -47,11 +45,14 @@ ul {
 }
 .zipinput {
   font-size: 24px;
+  color: lightgray;
+  background-color: #F2F99A;
 }
 
 .submitbutton {
   font-size: 24px;
   background-color: #0AE3B2;
+  color: gray;
 }
 
 /*Global*/
@@ -65,4 +66,13 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.result_container{
+  border: 2px solid lightgray;
+  width: 80%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F2F99A;
 }
