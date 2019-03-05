@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Header from './Header.jsx';
+import Results from './Results.jsx';
 import './App.css';
 
 
 class App extends Component {
   state = {
     zip: '',
+    weather: '',
     temp: '',
     location: '',
     description: '',
@@ -22,11 +24,12 @@ class App extends Component {
     fetch (url)
     .then (res => res.json())
     .then(data => {
-      console.log(data.name)
+      console.log(data)
       this.setState(preState => ({
-        temp: data.main.temp,
+        weather: data,
+        temp: data.name.temp,
         location: data.name,
-        description: data.weather[0].description
+        description: data.weather[0].main,
       }))
     })
   }
@@ -37,6 +40,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('this is state', this.state)
     return (
       <div>
       <Header />
@@ -50,6 +54,7 @@ class App extends Component {
         type = 'submit'>
         ENTER
       </button>
+      <Results />
       </div>
     );
   }
