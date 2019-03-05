@@ -27,7 +27,7 @@ class App extends Component {
       console.log(data)
       this.setState(preState => ({
         weather: data,
-        temp: data.name.temp,
+        temp: data.main.temp,
         location: data.name,
         description: data.weather[0].main,
       }))
@@ -54,7 +54,10 @@ class App extends Component {
         type = 'submit'>
         ENTER
       </button>
-      <Results />
+      <Results
+        temp = {this.state.temp}
+        location = {this.state.location}
+        description = {this.state.description} />
       </div>
     );
   }

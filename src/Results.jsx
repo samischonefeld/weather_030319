@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
 class Results extends Component{
-  componentDidUpdate(){
-    console.log('this is props', this.props)
-  }
+
   render(){
+    console.log('this is props', this.props)
     return(
       <div>
-      <h1> Weather </h1>
-      <h2> Temperature </h2>
-      <p> Description </p>
+      <h2> Location {this.props.location} </h2>
+      <h3> Temperature {this.props.temp}</h3>
+      <p> Description {this.props.description}</p>
       </div>
       )
   }
